@@ -22,7 +22,7 @@ namespace R_3_5_3
         public Result OnStartup(UIControlledApplication application)
         {
             // Сама вкладка - лента
-            string tabName = "R_3_5_1";
+            string tabName = "R_3_5_3";
             application.CreateRibbonTab(tabName);
             string utilsFolderPath = @"C:\Program Files\RevitAPITrainig\";
 
@@ -30,11 +30,13 @@ namespace R_3_5_3
             var panel = application.CreateRibbonPanel(tabName, "Трубы и стены");
 
             // кнопка приложения
-            var button = new PushButtonData("Типы", "Типы стен", Path.Combine(utilsFolderPath, "R_3_5_1.dll"), "R_3_5_1.Main");
+            var button = new PushButtonData("Типы", "Типы стен", 
+                Path.Combine(utilsFolderPath, "R_3_5_1.dll"), "R_3_5_1.Main");
             panel.AddItem(button);
-            Uri uriImage = new Uri(@"C:\Program Files\RevitAPITrainig\image\3289187.png", UriKind.Absolute);
-            BitmapImage largeImage = new BitmapImage(uriImage);
-            button.LargeImage = largeImage;
+            
+            //Uri uriImage = new Uri(@"C:\Program Files\RevitAPITrainig\images\3289187.png", UriKind.Absolute);
+            //BitmapImage largeImage = new BitmapImage(uriImage);
+            //button.LargeImage = largeImage;
 
             panel.AddItem(button);
 
